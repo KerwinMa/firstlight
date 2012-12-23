@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<FLTResRoot>
+    <Animation2D version="0.1">
+    	<Images>
+    		<Image name="test.tga" file="./test.tga">
+    			<Module uid="0x1001" left="45" top="16" width="78" height="90"/>
+      			<Module uid="0x1002" left="162" top="15" width="109" height="122"/>
+      			<Module uid="0x1003" left="45" top="180" width="58" height="99"/>
+      			<Module uid="0x1005" left="303" top="26" width="58" height="99"/>
+      			<Module uid="0x1006" left="239" top="194" width="32" height="102"/>
+    		</Image>
+    		<Image name="t2.tga" file="./t2.tga" />
+    	</Images>
+    	<Elements>
+    		<Element2D name="layer1">
+    			<children>
+    				<ElementModule name="layer1.lm1" image="test.tga" module="0x1001" x="-66" y="-301" rotate="0.000000" scale="1.0" flag="0"/>
+     		    	<ElementModule name="layer1.lm2" image="test.tga" module="0x1002" x="-43" y="-378" rotate="0.000000" scale="1.0" flag="0"/>
+      				<ElementModule name="layer1.lm3" image="test.tga" module="0x1003" x="-4" y="-290" rotate="0.000000" scale="1.0" flag="0"/>
+    			</childeren>
+    		</Element2D>
+    		<Element2D name="layer2">
+    			<children>
+	    			<ElementModule name="layer2.lm1" image="test.tga" module="0x1001" x="-66" y="-301" rotate="0.000000" scale="2.0" flag="0"/>
+	     		    <ElementModule name="layer2.lm2" image="test.tga" module="0x1002" x="-43" y="-378" rotate="0.000000" scale="2.0" flag="0"/>
+	      			<ElementModule name="layer2.lm3" image="test.tga" module="0x1003" x="-4" y="-290" rotate="0.000000" scale="2.0" flag="0"/>
+      			</children>
+    		</Element2D>
+    		<Element2D name="dummy1"/>
+    		<ElementRect name="rect1" left="10" top="20" width="10" height="20"/>
+    	</Elements>
+    </Animation2D>
+    
+    <AnimationSet version="0.1">   
+    	<Animation name="wait" loop="true">     	
+        	<Tracks>
+        		<Track name="color fade1" type="Track_RGB">
+        			<times>0, 100, 150, 320</times>
+        			<keyframes>
+        				255,255,0, 128,128,128, 220,129,120, 225,10,22,
+        			</keyframes>
+        			<interpolations>
+        				"linear", "linear", "linear", "linear"
+        			</interpolations>
+        		</Track>
+        	</Tracks>
+        	<Channels>
+        		<Channel track="color fade1" animable="layer1" target="rgb">
+        		<Channel track="pos" animable="layer2" target="pos">
+        		<Channel track="0x5001" animable="rect1" target="left">
+        	</Channels>
+    	</Animation>
+    </AnimationSet>
+</FLTResRoot>

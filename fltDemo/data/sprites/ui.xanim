@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XKitAnimationFile version="1" fps="30">
+  <Images Num="1">
+    <Image FilePath="..\ui.png" ModuleNum="8">
+      <Module left="61" top="52" width="145" height="63" type="0" name=""/>
+      <Module left="64" top="158" width="145" height="62" type="0" name=""/>
+      <Module left="277" top="38" width="41" height="60" type="0" name=""/>
+      <Module left="274" top="116" width="45" height="63" type="0" name=""/>
+      <Module left="197" top="294" width="74" height="70" type="0" name=""/>
+      <Module left="309" top="288" width="80" height="81" type="0" name=""/>
+      <Module left="208" top="389" width="63" height="65" type="0" name=""/>
+      <Module left="323" top="387" width="62" height="66" type="0" name=""/>
+    </Image>
+  </Images>
+  <Frames Num="6">
+    <Frame name="" FModuleNum="1">
+      <FModule image="0" module="0" x="-72" y="-31" rotate="0.000000" flag="0"/>
+    </Frame>
+    <Frame name="" FModuleNum="1">
+      <FModule image="0" module="1" x="-72" y="-31" rotate="0.000000" flag="0"/>
+    </Frame>
+    <Frame name="" FModuleNum="1">
+      <FModule image="0" module="2" x="-20" y="-30" rotate="0.000000" flag="0"/>
+    </Frame>
+    <Frame name="" FModuleNum="1">
+      <FModule image="0" module="3" x="-22" y="-31" rotate="0.000000" flag="0"/>
+    </Frame>
+    <Frame name="" FModuleNum="1">
+      <FModule image="0" module="4" x="-37" y="-35" rotate="0.000000" flag="0"/>
+    </Frame>
+    <Frame name="" FModuleNum="1">
+      <FModule image="0" module="6" x="-31" y="-32" rotate="0.000000" flag="0"/>
+    </Frame>
+  </Frames>
+  <Anims Num="6">
+    <Anim name="play_btn" AFrameNum="1">
+      <AFrame frame="0" delay="0" x="0" y="0" rotate="0.000000" flag="0"/>
+    </Anim>
+    <Anim name="play_btn_down" AFrameNum="1">
+      <AFrame frame="1" delay="0" x="0" y="0" rotate="0.000000" flag="0"/>
+    </Anim>
+    <Anim name="pause_btn" AFrameNum="1">
+      <AFrame frame="2" delay="0" x="0" y="0" rotate="0.000000" flag="0"/>
+    </Anim>
+    <Anim name="pause_btn_down" AFrameNum="1">
+      <AFrame frame="3" delay="0" x="0" y="0" rotate="0.000000" flag="0"/>
+    </Anim>
+    <Anim name="retry" AFrameNum="1">
+      <AFrame frame="4" delay="0" x="0" y="0" rotate="0.000000" flag="0"/>
+    </Anim>
+    <Anim name="retry_down" AFrameNum="1">
+      <AFrame frame="5" delay="0" x="0" y="0" rotate="0.000000" flag="0"/>
+    </Anim>
+  </Anims>
+</XKitAnimationFile>

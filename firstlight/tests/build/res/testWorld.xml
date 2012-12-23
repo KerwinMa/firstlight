@@ -1,0 +1,51 @@
+<FLTResXML>
+    <Phy2DWorld>
+        <Actors>
+            <Actor>
+                <basic x="-80" y="0" angle="0" sizeScaleX="1" sizeScaleY="1" visible="1" />
+                <gfx sprite="ft.xsp" animID="3" a="1" r="1" g="1" b="1" />
+                <phy static="1" isBall="0" />
+            </Actor>
+            <Actor>
+                <basic x="0" y="0" angle="0" sizeScaleX="1" sizeScaleY="1" visible="1" />
+                <gfx sprite="ft.xsp" animID="3" a="1" r="1" g="1" b="1" />
+                <phy static="1" isBall="0" />
+            </Actor>
+            <Actor>
+                <basic x="80" y="0" angle="0" sizeScaleX="1" sizeScaleY="1" visible="1" />
+                <gfx sprite="ft.xsp" animID="3" a="1" r="1" g="1" b="1" />
+                <phy static="1" isBall="0" />
+            </Actor>
+            <Actor>
+                <basic x="160" y="0" angle="0" sizeScaleX="1" sizeScaleY="1" visible="1" />
+                <gfx sprite="ft.xsp" animID="3" a="1" r="1" g="1" b="1" />
+                <phy static="1" isBall="0" />
+            </Actor>
+            <Actor>
+                <basic x="240" y="0" angle="0" sizeScaleX="1" sizeScaleY="1" visible="1" />
+                <gfx sprite="ft.xsp" animID="3" a="1" r="1" g="1" b="1" />
+                <phy static="1" isBall="0" />
+            </Actor>
+            <Actor>
+                <basic x="-70" y="50" angle="0" sizeScaleX="1" sizeScaleY="1" visible="1" />
+                <gfx sprite="ft.xsp" animID="3" a="1" r="1" g="1" b="1" />
+                <phy static="1" isBall="0" />
+            </Actor>
+            <Actor>
+                <basic x="10" y="100" angle="30" sizeScaleX="3" sizeScaleY="1" visible="1" />
+                <gfx sprite="ft.xsp" animID="3" a="1" r="1" g="1" b="1" />
+                <phy static="1" isBall="0" />
+            </Actor>
+            <Actor>
+                <basic x="60" y="150" angle="30" sizeScaleX="1" sizeScaleY="1" visible="1" />
+                <gfx sprite="birds.xsp" animID="0" a="1" r="1" g="1" b="1" />
+                <phy static="1" isBall="1" />
+            </Actor>
+            <Actor>
+                <basic x="150" y="300" angle="15" sizeScaleX="1.5" sizeScaleY="1" visible="1" />
+                <gfx sprite="birds.xsp" animID="0" a="1" r="1" g="1" b="1" />
+                <phy static="0" isBall="0" />
+            </Actor>
+        </Actors>
+    </Phy2DWorld>
+</FLTResXML>

@@ -1,0 +1,21 @@
+FLT Road Map
+
+
+Milestone 0.1.0版本
+
+主题：实现2D图形引擎
+
+
+文件系统，资源管理
+材质系统，可在资源中定义材质（材质脚本orXML)
+renderer的batch绘制（openGLES1.1)
+tga纹理载入(材质系统的一部分)
+renderer的transform
+camera
+
+renderer对2d模式的支持（camera,投影等）,考虑和3d的关系，纯2d游戏，3d为主的游戏，2d为主部分使用3d的游戏，3d出现在2d之上等
+底层的关键帧插值动画系统
+支持关键帧动画的2d动画系统（包括xml/二进制文件格式的设计，和材质脚本的设计要一起考虑），考虑动画编辑器（编辑器是下一个milestone主题）
+简单的scene manager for 2D
+
+

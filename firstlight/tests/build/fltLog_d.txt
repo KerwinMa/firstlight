@@ -1,0 +1,40 @@
+------------ FirstLight Engine Log File ---------------
+[engine][0]Logger created.
+[engine][0]EventManager created.
+[engine][0]ArchiveManager created.
+[engine][0]TextureManager created.
+[engine][0]MaterialManager created.
+[engine][0]MaterialFactory created.
+[engine][0]XSpriteManager created.
+[engine][0]XFontManager created.
+[engine][0]AnimSetManager created.
+[engine][0]UIManager created.
+[engine][0]Sound System inited.
+[engine][0]TGAImageLoader created.
+[engine][0]PNGImageLoader created.
+[engine][0]OpenGL ES-CM 1.1 -Imagination Technologies (Host GL: `ATI Technologies Inc.`)-Imagination Technologies (Host GL: `ATI Technologies Inc.`)
+[engine][0]OpenGLES1 renderer created.
+[engine][0]Win32Device created.
+[engine][0]screen=960X640, bits=32, useExternalWindow=0
+[engine][0]Load Archive ./res .
+[engine][0]Open File terrian/height64.raw, in Archive:  .
+[engine][0]Open File font.xsp, in Archive:  .
+[engine][0]Open File font.tga, in Archive:  .
+[engine][617]Win32Device shut down.
+[engine][617]OpenGLES1 renderer shut down.
+[engine][617]TGAImageLoader released.
+[engine][617]PNGImageLoader released.
+[engine][617]Sound System shut down.
+[engine][617]UIManager shut down.
+[engine][617]AnimSetManager shut down.
+[engine][617]XFontManager shut down.
+[engine][617]XSpriteManager shut down.
+[engine][617]MaterialFactory shut down.
+[engine][617]MaterialManager shut down.
+[engine][617]TextureManager shut down.
+[engine][617]ArchiveManager released, clear all archives.
+[engine][617]ArchiveManager shut down.
+[engine][617]EventManager shut down.
+[engine][617]Logger shut down.
+-------------------------
+Log File closed normally.

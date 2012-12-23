@@ -1,0 +1,126 @@
+<FLTResXML>
+    <Phy2DWorld>
+        <Actors>
+            <Actor>
+                <basic x="-568.331" y="398.721" angle="0" sizeScaleX="2" sizeScaleY="2" visible="1" />
+                <gfx sprite="objs.xsp" animID="1" a="1" r="1" g="1" b="1" layer="0" />
+                <phy isEnable="1" static="0" isBall="1" density="1" friction="1" restitution="0.5" isSensor="0" linearDamping="1" angularDamping="1" />
+            </Actor>
+            <Actor>
+                <basic x="-437.038" y="-209.895" angle="0" sizeScaleX="10" sizeScaleY="0.5" visible="1" />
+                <gfx sprite="objs.xsp" animID="3" a="1" r="1" g="1" b="1" layer="0" />
+                <phy isEnable="1" static="1" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="0" angularDamping="0" />
+            </Actor>
+            <Actor>
+                <basic x="441.806" y="141.737" angle="59.2273" sizeScaleX="13.1064" sizeScaleY="0.305151" visible="1" />
+                <gfx sprite="objs.xsp" animID="4" a="1" r="1" g="1" b="1" layer="0" />
+                <phy isEnable="1" static="1" isBall="0" density="1" friction="0" restitution="0" isSensor="0" linearDamping="0" angularDamping="0" />
+            </Actor>
+            <Actor>
+                <basic x="-147.445" y="-93.5165" angle="-89.6304" sizeScaleX="2" sizeScaleY="0.5" visible="1" />
+                <gfx sprite="objs.xsp" animID="2" a="1" r="1" g="1" b="1" layer="0" />
+                <phy isEnable="1" static="0" isBall="0" density="0.2" friction="0.3" restitution="0" isSensor="0" linearDamping="0" angularDamping="0" />
+            </Actor>
+            <Actor>
+                <basic x="-522.776" y="-173.066" angle="0" sizeScaleX="1" sizeScaleY="1" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" layer="0" />
+                <phy isEnable="1" static="0" isBall="1" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="0" angularDamping="0" />
+            </Actor>
+            <Actor>
+                <basic x="-280.82" y="-92.4161" angle="89.817" sizeScaleX="2" sizeScaleY="0.5" visible="1" />
+                <gfx sprite="objs.xsp" animID="2" a="1" r="1" g="1" b="1" layer="0" />
+                <phy isEnable="1" static="0" isBall="0" density="0.2" friction="0.3" restitution="0" isSensor="0" linearDamping="0" angularDamping="0" />
+            </Actor>
+            <Actor>
+                <basic x="-527.354" y="-143.074" angle="0" sizeScaleX="5.4204" sizeScaleY="4.0715" visible="1" />
+                <gfx sprite="bg.xsp" animID="0" a="1" r="1" g="1" b="1" layer="-10" />
+                <phy isEnable="0" static="1" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="0" angularDamping="0" />
+            </Actor>
+            <Actor>
+                <basic x="-134.434" y="501.681" angle="0" sizeScaleX="0.8" sizeScaleY="0.8" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" layer="-1" />
+                <phy isEnable="1" static="0" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="1" angularDamping="1" />
+            </Actor>
+            <Actor>
+                <basic x="-470.411" y="913.732" angle="0" sizeScaleX="21.2004" sizeScaleY="1.40809" visible="1" />
+                <gfx sprite="objs.xsp" animID="3" a="1" r="1" g="1" b="1" layer="0" />
+                <phy isEnable="1" static="1" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="0" angularDamping="0" />
+            </Actor>
+            <Actor>
+                <basic x="-1944.67" y="-38.8934" angle="0" sizeScaleX="-0.632353" sizeScaleY="34.0908" visible="1" />
+                <gfx sprite="objs.xsp" animID="3" a="1" r="1" g="1" b="1" layer="0" />
+                <phy isEnable="1" static="1" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="0" angularDamping="0" />
+            </Actor>
+            <Actor>
+                <basic x="-240.133" y="422.693" angle="0" sizeScaleX="0.8" sizeScaleY="0.8" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" layer="-1" />
+                <phy isEnable="1" static="0" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="1" angularDamping="1" />
+            </Actor>
+            <Actor>
+                <basic x="-78.1509" y="543.17" angle="0" sizeScaleX="0.8" sizeScaleY="0.8" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" layer="-1" />
+                <phy isEnable="1" static="0" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="1" angularDamping="1" />
+            </Actor>
+            <Actor>
+                <basic x="-56.7995" y="247.634" angle="0" sizeScaleX="0.8" sizeScaleY="0.8" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" layer="-1" />
+                <phy isEnable="1" static="0" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="1" angularDamping="1" />
+            </Actor>
+            <Actor>
+                <basic x="-73.3821" y="466.54" angle="0" sizeScaleX="0.8" sizeScaleY="0.8" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" layer="-1" />
+                <phy isEnable="1" static="0" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="1" angularDamping="1" />
+            </Actor>
+            <Actor>
+                <basic x="-186.698" y="461.514" angle="0" sizeScaleX="0.8" sizeScaleY="0.8" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" layer="-1" />
+                <phy isEnable="1" static="0" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="1" angularDamping="1" />
+            </Actor>
+            <Actor>
+                <basic x="-237.186" y="366.546" angle="0" sizeScaleX="0.8" sizeScaleY="0.8" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" layer="-1" />
+                <phy isEnable="1" static="0" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="1" angularDamping="1" />
+            </Actor>
+            <Actor>
+                <basic x="-120.721" y="294" angle="0" sizeScaleX="0.8" sizeScaleY="0.8" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" layer="-1" />
+                <phy isEnable="1" static="0" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="1" angularDamping="1" />
+            </Actor>
+            <Actor>
+                <basic x="-180.039" y="340.35" angle="0" sizeScaleX="0.8" sizeScaleY="0.8" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" layer="-1" />
+                <phy isEnable="1" static="0" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="1" angularDamping="1" />
+            </Actor>
+            <Actor>
+                <basic x="-184.251" y="401.377" angle="0" sizeScaleX="0.8" sizeScaleY="0.8" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" layer="-1" />
+                <phy isEnable="1" static="0" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="1" angularDamping="1" />
+            </Actor>
+            <Actor>
+                <basic x="-123.648" y="356.728" angle="0" sizeScaleX="0.8" sizeScaleY="0.8" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" layer="-1" />
+                <phy isEnable="1" static="0" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="1" angularDamping="1" />
+            </Actor>
+            <Actor>
+                <basic x="-131.532" y="430.103" angle="0" sizeScaleX="0.8" sizeScaleY="0.8" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" layer="-1" />
+                <phy isEnable="1" static="0" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="1" angularDamping="1" />
+            </Actor>
+            <Actor>
+                <basic x="-68.9746" y="392.774" angle="0" sizeScaleX="0.8" sizeScaleY="0.8" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" layer="-1" />
+                <phy isEnable="1" static="0" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="1" angularDamping="1" />
+            </Actor>
+            <Actor>
+                <basic x="-69.507" y="313.289" angle="0" sizeScaleX="0.8" sizeScaleY="0.8" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" layer="-1" />
+                <phy isEnable="1" static="0" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="1" angularDamping="1" />
+            </Actor>
+            <Actor>
+                <basic x="-288.677" y="391.236" angle="0" sizeScaleX="0.8" sizeScaleY="0.8" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" layer="-1" />
+                <phy isEnable="1" static="0" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" linearDamping="1" angularDamping="1" />
+            </Actor>
+        </Actors>
+    </Phy2DWorld>
+</FLTResXML>

@@ -1,0 +1,42 @@
+pig的batch机制
+
+首先，在scene mgr级别，对于不同类型的材质（solid, alpha test, transparent)的可渲染物体，分成三个渲染队列分别进行渲染
+1)根据renderable的材质类型，将其插入某个或某几个渲染队列中。（存在同时插入多个渲染队列的情况，类似multi-pass，对于某些渲染技术需要，例如排序正确的边缘柔和的树叶）
+2）分别渲染，根据需要排序队列
+   2-1 设置driver的batchRenderPass为solid,打开batch,渲染solid队列中所有renderable,之后执行driver的Flush
+   2-2 设置driver的batchRenderPass为alpha test,打开batch,对alpha test队列按照F2B排序，渲染所有renderable,执行Flush
+   2-3 设置driver的batchRenderPass为transparent,打开batch,对transparent队列按照B2F排序，渲染所有renderable，执行Flush
+
+在driver的接口中,DrawPrimitives(RenderJob* _job)是被客户调用的，RenderJob中已经含有设置好的material
+调用DrawPrimitives(RenderJob* _job)时，先进行判断，如果不使用batch机制，或者该job不能被batch,或者当前使用了一个静态材质，则Flush当前batch的东西，并直接调用内部的_DrawPrimitives渲染。（这是真正draw call执行的地方）
+否则进行插入batch队列的操作。注意半透明和不透明job（包括alpha test)是使用不同的batch队列，其中半透明使用了一个一维的render job数组，不透明的则使用了一个二维render job数组（可batch到一起的job在一行上）。
+插入时，判断当前的job是插入半透明的batch队列还是不透明的队列，是依据调用DrawPrimitives时，driver的batchRenderPass，即上面说的scene mgr分别渲染三个渲染队列之前的设置。如果是transparent则插入到半透明的batch，否则是不透明的。
+半透明batch队列就是一个一维数组，直接将render job push_back即可，不透明的batch队列是个二维数组，其中第一维是根据相同的render job ID划分，即可以batch到一块儿的job，这样二维数组中每一行都是一组可以batch到一块儿的render job。
+（具体的过程是：首先这个二维数组是在beginRender里面被清空的，render job添加时比较所有非空行的第一个job的ID，如果相同就push back到该行，否则占用找到的第一个空行，如果没有空行，就扩大一行）
+render job的ID计算会同时计算自己的ID并加上material的ID<<16,而material分静态和动态，静态material ID就是所有静态material组成的数组中的索引，而动态material是经常改变的，他们的ID每次都要重新计算，为了防止数组无限扩大，规定了一个最大值，超过后就清空重新计算。无论是render job还是material，计算ID时都使用到了他们的operator ==进行比较（对于job主要是顶点格式是否相同，对于material要完全一致包括texture）。
+
+可见DrawPrimitives(RenderJob* _job)只是添加可渲染物体的render job到不同的batch队列中（当然如果是非batch的就直接渲染），有多少添加多少，所以数组可能很大，但只是保存了指针所以不费空间，然后在Flush的时候（上面scene mgr处的调用）统一渲染batched job。
+Flush的过程是：
+首先也是区分是否半透明和不透明的batchRenderPass。
+对于半透明，执行DrawBatchedTransparent，之后清空batch队列。DrawBatchedTransparent内部的处理是从头到尾查找靠在一起的job是否可以batch(也是判断job ID)计算出start和end索引(注意end判断后又自加过1），然后先apply start job的material, 如果可以batch(end-start>1)执行DrawBatched（jobs, start, end)。否则如果end-satrt<=1，说明是一个落单的job(前后都没有可以和他batch的）则直接调用内部的_DrawPrimitives执行真实的渲染。
+对于不透明，就更简单了，因为每行都是可batch的job，所以不用再判断，只检查每行的job数，如果只有一个job，就设置他的材质并调用内部的_DrawPrimitives执行真实的渲染，否则调用DrawBatched（jobArray)对一组job进行渲染。
+DrawBatched（jobArray)内部其实就是先apply第一个job的material，并调用DrawBatched（jobs, 0, size).
+DrawBatched（jobs, start, end)是真正执行batch操作和执行draw call的地方。batch操作就是将这些render job执行AddRenderJobToBatch，这里面会transform顶点，并填充到一个batch结果的顶点数组中并拷贝索引数组。注意这儿render job可以是有cache顶点机制的，如果cache，就会把transform好的顶点存着留下次直接copy出来使用。如果batch数组满了，他会直接resize。（并不会flush)
+完成batch操作后，执行的绘制就和_DrawPrimitives中大同小异，主要是顶点数组和索引数组换成相应的batch数组了。
+
+总结：
+pig的batch并不是仅仅在driver层中实现的透明的batch机制，他需要scene mgr层的配合。主要是分层三个渲染队列，使用batchRenderPass控制插入到不同的batch队列，并主动调用Flush绘制。这样的优点是最大程度的batch(对于不透明的物体是这样的，因为必须等所有的物体都插入到batch队列中之后才执行batch & render），对于半透明物体，因为必须按照B2F顺序绘制，所以只能顺序检查相邻的render job是否可以batch。再加上batch顶点数组的无限制resize，所以几乎是执行了最大化的batch。
+对于2D元素，理论上也是一样的，只是2D的渲染需要设置新的camera之后执行，一般是3D渲染结束后，pig如何处理还没有研究。
+
+讨论：
+1）是否可以做出纯driver层的batch？是否必要？
+显然如果只是driver层去考虑，对于不透明的物体无法处理，总需要在一个地方对他们按材质进行排序，pig的巧妙之处在于用二维数组的插入代替的一维数组的排序
+但是我们可以处理成，如果没有scene mgr的辅助，driver层能进行最低限度的batch(延迟执行渲染，等待下一次的job到来，判断是否batch，最后endRender时在执行一次flush)，scene mgr再加上sort by material，自己就可以完美的batch了。（没仔细思考呢）
+
+2）2D渲染batch机制的不同之处
+
+2D渲染在pig里，只是封装了Begin/End2D，处理了一下projection；2D绘制是在Aurora的Sprite中封装的，貌似相当于也做了batch，把所有module的绘制都cache到Triangle buffer，完了用PrimitiveMode绘制
+
+
+
+3）基于scene 的整个渲染流程（多渲染队列，而不仅仅是3个），多渲染队列的一个用处是强行控制绘制顺序。

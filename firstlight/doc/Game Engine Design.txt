@@ -1,0 +1,19 @@
+Features
+1)跨平台，支持Windows,iPhone,PSP
+2)使用标准c++, boost, loki等优秀程序库
+3)图形API独立，支持OpenGL/ES,DX
+4)支持固定流水线和可编程流水线统一架构的材质系统
+5)组件架构，可动态plugin
+6)游戏开发基础服务库，如Log,Profile,Memory,Math,IO,Vector,Matrix,Quaternion,Timer，Json,XML,FSM,3D几何库：line, plane, triangle
+7)基础动画系统：TimeLine,Source,Sampler,Channel,Animation, 2D/3D/特效等动画公用，共用曲线编辑器
+8)游戏编辑器共生
+9)batch优化
+10）All-in-one 3D动画文件格式，支持skin, morph, uv动画，支持动画blending,多slot动画，IK
+11)集成bullet，box2D物理引擎
+12)强大的2d引擎：支持模块动画，关键帧动画，基于动画的UI系统，3D面片的2D特效，纹理动画；2D movie动画
+13）高级特效系统：支持各种2D/3D特效，billboard, pointsprite, strip, line,各种参数皆可动画
+14) bitmap字体，freetype字体
+15）2D编辑器： world editor，animation editor, UI editor, background editor, movie editor
+16) 3D编辑器：terrian editor, world editor, effect editor, movie editor,
+17) native纹理支持
+18）2d/3d scene graph

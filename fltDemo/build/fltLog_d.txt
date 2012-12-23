@@ -1,0 +1,51 @@
+------------ FirstLight Engine Log File ---------------
+[engine][0]Logger created.
+[engine][0]EventManager created.
+[engine][0]ArchiveManager created.
+[engine][0]TextureManager created.
+[engine][0]MaterialManager created.
+[engine][0]MaterialFactory created.
+[engine][0]XSpriteManager created.
+[engine][0]XFontManager created.
+[engine][0]AnimSetManager created.
+[engine][0]UIManager created.
+[engine][0]Sound System inited.
+[engine][0]TGAImageLoader created.
+[engine][0]PNGImageLoader created.
+[engine][0]OpenGL ES-CM 1.1 -Imagination Technologies (Host GL: `ATI Technologies Inc.`)-Imagination Technologies (Host GL: `ATI Technologies Inc.`)
+[engine][0]OpenGLES1 renderer created.
+[engine][0]Win32Device created.
+[engine][0]screen=640X960, bits=32, useExternalWindow=0
+[engine][0]Load Archive ./res .
+[engine][0]Open File font_dbg.xsp, in Archive:  .
+[engine][0]Open File font_dbg.tga, in Archive:  .
+[engine][0]Open File ui.xsp, in Archive:  .
+[engine][0]Open File ui.tga, in Archive:  .
+[engine][0]Open File mainmenu.xml, in Archive:  .
+[engine][0]Open File mainmenu.xml, in Archive:  .
+[engine][0]Open File interface.xml, in Archive:  .
+[engine][0]Open File interface.xml, in Archive:  .
+[engine][151]Open File objs.xsp, in Archive:  .
+[engine][151]Open File objs.tga, in Archive:  .
+[engine][154]Open File level1_1.xml, in Archive:  .
+[engine][154]Open File bg.xsp, in Archive:  .
+[engine][154]Open File bg.tga, in Archive:  .
+[engine][1310]Open File level1_1.xml, in Archive:  .
+[engine][1403]Win32Device shut down.
+[engine][1403]OpenGLES1 renderer shut down.
+[engine][1403]TGAImageLoader released.
+[engine][1403]PNGImageLoader released.
+[engine][1403]Sound System shut down.
+[engine][1403]UIManager shut down.
+[engine][1403]AnimSetManager shut down.
+[engine][1403]XFontManager shut down.
+[engine][1403]XSpriteManager shut down.
+[engine][1403]MaterialFactory shut down.
+[engine][1403]MaterialManager shut down.
+[engine][1403]TextureManager shut down.
+[engine][1403]ArchiveManager released, clear all archives.
+[engine][1403]ArchiveManager shut down.
+[engine][1403]EventManager shut down.
+[engine][1403]Logger shut down.
+-------------------------
+Log File closed normally.

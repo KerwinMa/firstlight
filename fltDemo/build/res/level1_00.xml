@@ -1,0 +1,41 @@
+<FLTResXML>
+    <Phy2DWorld>
+        <Actors>
+            <Actor>
+                <basic x="596.732" y="740.08" angle="15" sizeScaleX="1" sizeScaleY="1" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" />
+                <phy static="0" isBall="1" density="1" friction="0.3" restitution="0.2" isSensor="0" />
+            </Actor>
+            <Actor>
+                <basic x="-437.038" y="-209.895" angle="0" sizeScaleX="10" sizeScaleY="0.5" visible="1" />
+                <gfx sprite="objs.xsp" animID="3" a="1" r="1" g="1" b="1" />
+                <phy static="1" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" />
+            </Actor>
+            <Actor>
+                <basic x="441.806" y="141.737" angle="59.2273" sizeScaleX="13.1064" sizeScaleY="0.305151" visible="1" />
+                <gfx sprite="objs.xsp" animID="4" a="1" r="1" g="1" b="1" />
+                <phy static="1" isBall="0" density="1" friction="0.3" restitution="0" isSensor="0" />
+            </Actor>
+            <Actor>
+                <basic x="-9.74243" y="-87.6819" angle="-89.6304" sizeScaleX="2" sizeScaleY="0.5" visible="1" />
+                <gfx sprite="objs.xsp" animID="2" a="1" r="1" g="1" b="1" />
+                <phy static="0" isBall="0" density="0.2" friction="0.3" restitution="0" isSensor="0" />
+            </Actor>
+            <Actor>
+                <basic x="-147.445" y="-93.5165" angle="-89.6304" sizeScaleX="2" sizeScaleY="0.5" visible="1" />
+                <gfx sprite="objs.xsp" animID="2" a="1" r="1" g="1" b="1" />
+                <phy static="0" isBall="0" density="0.2" friction="0.3" restitution="0" isSensor="0" />
+            </Actor>
+            <Actor>
+                <basic x="-495.289" y="-171.539" angle="0" sizeScaleX="1" sizeScaleY="1" visible="1" />
+                <gfx sprite="objs.xsp" animID="0" a="1" r="1" g="1" b="1" />
+                <phy static="0" isBall="1" density="1" friction="0.3" restitution="0" isSensor="0" />
+            </Actor>
+            <Actor>
+                <basic x="-280.82" y="-92.4161" angle="89.817" sizeScaleX="2" sizeScaleY="0.5" visible="1" />
+                <gfx sprite="objs.xsp" animID="2" a="1" r="1" g="1" b="1" />
+                <phy static="0" isBall="0" density="0.2" friction="0.3" restitution="0" isSensor="0" />
+            </Actor>
+        </Actors>
+    </Phy2DWorld>
+</FLTResXML>

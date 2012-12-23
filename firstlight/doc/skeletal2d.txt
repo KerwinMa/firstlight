@@ -1,0 +1,10 @@
+2D skeletal animation system
+
+http://sourceforge.net/projects/bonezengine/
+http://sourceforge.net/projects/dskeletallib/
+http://sourceforge.net/projects/animadead/
+
+http://www.codeproject.com/KB/graphics/2d_poligon_drawer-animato.aspx
+
+
+http://marctenbosch.com/skeletal2d/

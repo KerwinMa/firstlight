@@ -1,0 +1,21 @@
+<FLTResXML>
+    <UILayer name="interface">
+        <basic x="0" y="0" rl="0" rt="0" rw="320" rh="480" scaleX="1" scaleY="1" rotation="0" alpha="1" r="1" g="1" b="1" />
+        <UIObjects>            
+            <UIObject name="pause" type="UIButton">
+                <basic x="30" y="30" rl="0" rt="0" rw="-1" rh="-1" scaleX="1.0" scaleY="0.5" rotation="60" alpha="0.6" r="1" g="1" b="1" />
+                <pane sprite="ui.xsp" animID="2" />
+                <button font="" pressedAnimID="3" doneAnimID="" text="" />
+            </UIObject>            
+			<UIObject name="retry" type="UIButton">
+                <basic x="280" y="30" rl="0" rt="0" rw="-1" rh="-1" scaleX="0.5" scaleY="1.0" rotation="0" alpha="0.6" r="1" g="1" b="1" />
+                <pane sprite="ui.xsp" animID="4" />
+                <button font="" pressedAnimID="5" doneAnimID="" text="" />
+            </UIObject> 
+			<UIObject name="FullScreenZone" type="UITouchZone">
+                <basic x="0" y="0" rl="0" rt="0" rw="320" rh="480" scaleX="1" scaleY="1" rotation="0" alpha="1" r="1" g="1" b="1" />
+                <touchZone fullScreen="1" />
+            </UIObject>
+        </UIObjects>
+    </UILayer>    
+</FLTResXML>

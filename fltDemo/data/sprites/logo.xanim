@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XKitAnimationFile version="1" fps="30">
+  <Images Num="1">
+    <Image FilePath="..\logo.png" ModuleNum="1">
+      <Module left="52" top="80" width="140" height="62" type="0" name=""/>
+    </Image>
+  </Images>
+  <Frames Num="1">
+    <Frame name="logo" FModuleNum="1">
+      <FModule image="0" module="0" x="-70" y="-31" rotate="0.000000" flag="0"/>
+    </Frame>
+  </Frames>
+  <Anims Num="1">
+    <Anim name="logo" AFrameNum="1">
+      <AFrame frame="0" delay="0" x="0" y="0" rotate="0.000000" flag="0"/>
+    </Anim>
+  </Anims>
+</XKitAnimationFile>

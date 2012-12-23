@@ -1,0 +1,39 @@
+FLT 材质系统和渲染状态管理
+
+原则：
+1）FLT 1只支持固定流水线
+2) 简单易用
+3）支持材质脚本
+
+材质系统结构：
+材质 Effect->Technique->Pass， Technique是为了让不同平台采用不同技术或者不同（主要是为了兼容不同平台的统一包使用），Pass中是render state, tex-unit, light
+材质实例 Material: 修改Effect中的某些可更改的参数，例如纹理图片
+（此结构类似Collada）,还有程序中可能要动态设置一些参数，比如alpha,所以renderer最终对于Geometry使用的是Material, 而Effect则是默认值（初始值），Material从Effect而来（为了节省内存，直接包含Effect的ptr,然后保存相对于Effect不同的那些参数）
+另外，在材质脚本中，也可以直接定义Material。
+材质一般的用法是：
+1）对于固定的材质（不用代码中动态改变参数的），在材质脚本中定义Effect,定义Material(直接指向相应的Effect)，Geometry关联Material
+    模型载入时，会创建相应的Effect和Material (Effect是可以被Material共享的)
+2) 对于程序需要动态改变参数的材质， 有几种情况：
+  <1> 程序中直接使用模型，也是在材质脚本中定义Effect和Material, 模型文件要关联材质脚本中的材质。如果同一个模型需要用很多份但材质变化不同，则需要在代码里clone一个Material。比如所有的小兵可能都是一个材质，但是有些小兵中了某些特殊状态了，比如被辐射了，需要clone一个材质出来改变某些参数。
+  <2> 程序中可能直接使用顶点流绘制，（程序生成的模型），这样他需要被赋予一个材质，为了方便，也可以在外部脚本中定义Effect和Material，但是引擎应该提供接口，让程序自己创建Effect，Material。这样一些简单的材质就不需要外部载入了。
+
+
+材质脚本可用OGRE那样的格式表达，用lua或xml,json。（最终材质，模型，动画，UI, 粒子特效都可以统一到一个文件中去，但也支持分开，互相搭配使用）
+
+render state apply 过程：
+每当一个Geometry被渲染时,设置Material,遍历pass
+对每一个pass，设置所有和默认状态不同的状态。（也就是材质脚本或代码里面设置的那些状态）
+渲染Geometry
+恢复那些被改变的默认状态。（纹理单元disable,顶点数组disable...）
+
+关于全局render state:
+一些render state不适合放在材质这层，比如..., 需要在renderer里面直接设置。（有一些不常用的render state没有在render state这层给出）
+
+材质管理器：
+保存所有材质(其他地方使用这些材质都是用shared ptr)，载入材质，释放材质，clone材质
+
+材质排序和动态batch:
+ 按pass排序，要比较render state和texture,light（但是多pass不能拆开，所以多pass是不能batch的。显然吧。。多pass显然render state或texture,light不一样）。multi-texture是可以batch的，只要他们的tex-units完全一样。总之，除了顶点数据之外，所有渲染相关状态和纹理，Light一样就可以batch。
+如果pass用到的render state和tex和上一次pass一样，则进行batch,将顶点，法线，uv，vertex color进行搜集，如果满了就flush。
+貌似如果有blend也不能batch。。。
+batch再研究

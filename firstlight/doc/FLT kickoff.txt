@@ -1,0 +1,39 @@
+FLT 开始画点东西
+
+要考虑的事情：这是renderer的一个基本功能，也就是对drawElements/drawArrays的封装，
+所以封装一个VertexArray，作为绘制的顶点数据源
+
+VertexArray提供位置，法线，颜色，纹理坐标（支持多层纹理坐标）等顶点属性，顶点属性除了位置外都可以不存在，每种顶点属性的数据类型可指定
+    一般的情况，这些顶点数据存在于一个混合数组中，但也可以分开。
+    VertexArray可以直接持有顶点数据，也可以共享（要考虑不同类型的动画），另外还要支持VBO(暂不考虑)
+
+使用情况一：程序建立的mesh,如特效等
+需要VertexArray自己持有顶点数据
+
+使用情况二：外部载入的动画模型文件
+需要共享顶点数据
+其中又分静态模型和动画，动画模型需要更新vertex array
+
+
+renderer绘制过程：
+renderer->setTransform
+//render pass
+renderer->ApplyMaterial
+renderer->drawVertexArray
+
+(还没考虑到batch和sort)
+
+对，应该叫Vertex Buffer
+
+======思路整理=========
+
+目标：
+实现支持材质和batch的3d/2d primitive rendering 
+
+renderer层：
+
+material系统：
+
+batch系统：
+ Buffer 
+

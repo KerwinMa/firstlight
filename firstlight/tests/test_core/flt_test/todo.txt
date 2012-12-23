@@ -1,0 +1,82 @@
+12.22
+1) 检查加入2d test后，xlib test的batch出错的bug ==================>done 因为break不能跳出两层循环。。。
+2) 2d batch加入color, 改变xlib test的sprite的材质使用color来测试==>done
+
+3）考虑多个预留的2d batch，如有颜色，无颜色等=====================>hold,not necessary now
+		可考虑只是用一个BattchBuffer,但是支持所有组件，pos, color, 2-uv,即内存都分配好的，但是每个组件都有个标志表示在实际画的时候是否使用
+		做batch的时候，如果新的VA可以被batch但不适合目前的BB（例如材质不同，有无颜色，有2层uv等）, 就flush并设置BB各个组件的标志，然后用这个新设定后的BB对VA进行batch
+		当然BB组件的格式（f32,u8,u16等不可改变）和元素数（2个还是3个顶点），如果VA的组件格式和BB不符合就只能不被batch了
+		
+		以上的做法基本可以适应所有的2d绘制
+
+4）优化整理代码 ===================》done
+5）加个简单的frame profile=========> hold
+6) 加入XFont ======================》done,再加入size和rotate ===>done
+
+12.25
+1) Touch system on both PC emulator and iOS device
+2) Simple UI
+3) Sound System
+
+1.3
+1) Sprite, Font 增加resmanager ============================>done
+2) 再次考虑通用动画系统。。UI也需要动画，也许能用上
+3）UI支持动画后，需要切换动画状态，以及能恢复原始状态
+4）UI manger,支持layer的载入，切换，支持同时更新和渲染多个layer，特殊的layer: debug layer和profile layer,需要默认“系统”字体
+5) UI系统载入代码，加入错误log信息==>done
+
+1.4-1.6
+1) UIButton  =======> 基本的按钮功能done! 还要考虑游戏中如何使用按钮，是查询还是事件==>done,use event!!
+
+Need layer manager, to let user know id from layer & button name
+
+2) touch 移植iOS
+
+3) 需要某种东西，将UI的状态和游戏中的变量联系起来，比如确定switch button初始是on还是off ==>目前暂时在载人layer后，对其中的控件手动初始化状态
+
+4）GamepadButton: 模拟游戏手柄上的按钮，特点是按下即触发，可以按住持续产生事件。==》（Hold)需要时再加吧
+
+5）开始修复Xkit,xsp文件中要将tga名字关联上去，这样可以直接在载人xsprite的代码里面setTexture
+
+1.10
+option按钮的bug: 按下动画没变==>因为这个按钮的done anim和pressed anim是一样的，先onEvent后update,在同一帧执行。按下按钮后，在onEvent里面切换到pressed anim,但随后立即在update里面判断是done anim over后直接变anim id。所以按钮就按不下了。。不解决了，必须这几个动画不能一样，否则donAnim就填-1
+
+1.11
+将XAnim的绘制改为计算localxform, xsprite也应该这样，优化xform的dirty(done!)
+重构需求：目前的2d系统没有明确的xform体系，scale,rotation用的比较混乱，特别是字体这儿，现在按钮上的文字就不能随按钮旋转，但是能随UILayer旋转。。。
+
+1.12
+1) 目前2d动画系统以及UI系统的transform都有点问题，应该使用scene node那样区分relative和absolute变换，整个结构是一棵树。但现在先不管了。现在的重点是用最快的速度完成UI动画。
+2）UI动画不要弄复杂了，先别考虑曲线编辑器那种复杂的东西，弄一个简单的界面，拖放，设置一些关键帧就好了。关键帧具体到坐标，alpha，颜色就好了，不要细分到x,y,z(即曲线），插值方式用hermit,liner,step就好了，不用编辑曲线。
+3）还需要做一个UI的名字映射或ID获得，在游戏中要知道事件是哪个按钮发过来的，才能做相应的逻辑。可能需要写一个脚本，或者c++
+4）尽快完成后上ios，加touch代码，测试
+
+
+
+1.17
+
+1)xml规范：所有xml文件的root必须是FLTResXML,所有类的载人保存xml代码必须是loadFromXML/saveToXML，参数为代表这个对象的node
+外部接口的类，要有loadFromXMLFile/saveToXMLFile，参数为文件名 =>done
+
+2)ui使用的anim set数据可以不share，即不使用animSetMgr载入，而是直接载入 =>done
+
+3)考虑anim obj如果包含使用而不是继承，考虑如何播放动画，考虑target如何设置，解决问题：多接口同参数（如有x,y,z，可以分别作为target，也可以整体作为target，如果只是得到指针就很难弄了）=>done
+
+
+1.20
+1) skip 动画， 播放新动画时要检查当前动画是否播放完毕，如果正在播，先skip到结束 =>done (还要考虑参数被动画改了就回不来了。。即被动画1修改，但不被其他动画修改，参数就会停留在动画1播放到的地方）
+2）target修改后，要通知animable做相应的动作，目前只是一个整体通知，会导致所有相关的参数被刷新，要优化一下。。
+3）加入不同的插值类型，以及对于四元数的插值（目前2d部分没用到四元数，先hold)
+
+1.23
+NOTE: TinyXML load时已经使用了flt的Archive，所以load时只要指定在包中的文件名就行了（不要指定路径，否则反而不对），但是保存xml没有改！！！
+
+1.25
+Box2d world step的时间用1/60.0f就可以，用dt/1000.0f就不动。。。。奇怪
+
+1.29
+阅读Box2d文档和demo,更深入的了解box2d,坐标的使用，更多的考虑，以及camera的远近===>done!
+module旋转后锯齿很明显，是否module边缘有alpha就好了？已经采用线性过滤，2d无需mipmap吧===>done!已经搞明白了，用较多的alpha边缘包围module即可
+
+2.1
+加入了几种插值方式，需要在xml数据中加入，基于keyframe的。 ==> done!

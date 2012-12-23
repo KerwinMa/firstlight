@@ -1,0 +1,73 @@
+<FLTResXML>
+    <UILayer name="test layer">
+        <basic x="50" y="50" rl="0" rt="0" rw="150" rh="180" scaleX="1" scaleY="1" rotation="0" alpha="0.8" r="1" g="1" b="1" />
+        <UIObjects>
+            <UIObject name="bg pane" type="UIPane">
+                <basic x="100" y="180" rl="-66.0554" rt="-84.0781" rw="123.555" rh="156.881" scaleX="0.5" scaleY="0.5" rotation="0" alpha="0.5" r="1" g="1" b="1" />
+                <pane sprite="ft.xsp" animID="4" />
+            </UIObject>
+            <UIObject name="play button" type="UIButton">
+                <basic x="20" y="80" rl="-6.07769" rt="0" rw="84.8623" rh="48.3601" scaleX="1" scaleY="1" rotation="0" alpha="1" r="0.5" g="1" b="1" />
+                <pane sprite="ft.xsp" animID="2" />
+                <button font="font.xsp" pressedAnimID="3" doneAnimID="-1" text="play" />
+            </UIObject>
+            <UIObject name="option button" type="UIButton">
+                <basic x="20" y="140" rl="-6.07769" rt="0" rw="84.8623" rh="48.3601" scaleX="1" scaleY="1" rotation="-10" alpha="0.2" r="1" g="0" b="0" />
+                <pane sprite="ft.xsp" animID="2" />
+                <button font="font.xsp" pressedAnimID="3" doneAnimID="-1" text="option" />
+            </UIObject>
+            <UIObject name="switch button" type="UISwitchButton">
+                <basic x="80" y="20" rl="-6.07769" rt="0" rw="84.8623" rh="48.3601" scaleX="1" scaleY="1" rotation="10" alpha="1" r="0" g="1" b="0" />
+                <pane sprite="ft.xsp" animID="2" />
+                <button font="font.xsp" pressedAnimID="3" doneAnimID="-1" text="On" />
+                <switch offAnimID="2" offPressedAnimID="3" offText="Off" />
+            </UIObject>
+        </UIObjects>
+    </UILayer>
+    <AnimationSet>
+        <Animation name="enter" loop="0">
+            <Tracks>
+                <Track name="btn move in" dataType="vector2f">
+                    <times>0.000,1000.000,2000.000</times>
+                    <keyframes>0.000,0.000,200.000,300.000,100.000,150.000</keyframes>
+                    <interps>cubic,linear,step</interps>
+                </Track>
+                <Track name="layer rotation" dataType="float">
+                    <times>0.000,500.000,800.000,1000.000,1500.000,2000.000</times>
+                    <keyframes>0.000,90.000,180.000,360.000,450.000,720.000</keyframes>
+                    <interps>cubic,easeinout,step,easeout,easein,linear</interps>
+                </Track>
+                <Track name="alpha fade in" dataType="float">
+                    <times>0.000,1000.000,2000.000</times>
+                    <keyframes>0.200,0.500,1.000</keyframes>
+                    <interps>easein,easeout,linear</interps>
+                </Track>
+            </Tracks>
+            <Channels>
+                <Channel track="btn move in" animable="play button" target="pos2d" />
+                <Channel track="alpha fade in" animable="play button" target="alpha" />
+                <Channel track="alpha fade in" animable="test layer" target="alpha" />
+                <Channel track="layer rotation" animable="test layer" target="rot2d" />
+            </Channels>
+        </Animation>
+        <Animation name="exit" loop="0">
+            <Tracks>
+                <Track name="btn move out" dataType="vector2f">
+                    <times>0.000,1000.000,2000.000</times>
+                    <keyframes>100.000,150.000,200.000,300.000,0.000,0.000</keyframes>
+                    <interps>cubic,easeinout,linear</interps>
+                </Track>
+                <Track name="alpha fade out" dataType="float">
+                    <times>0.000,2000.000</times>
+                    <keyframes>1.000,0.200</keyframes>
+                    <interps>linear,linear</interps>
+                </Track>
+            </Tracks>
+            <Channels>
+                <Channel track="btn move out" animable="play button" target="pos2d" />
+                <Channel track="alpha fade out" animable="play button" target="alpha" />
+                <Channel track="alpha fade out" animable="test layer" target="alpha" />
+            </Channels>
+        </Animation>
+    </AnimationSet>
+</FLTResXML>

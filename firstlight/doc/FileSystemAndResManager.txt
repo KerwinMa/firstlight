@@ -1,0 +1,85 @@
+开始涉及纹理部分了，所以要做底层的文件系统和上层的资源管理器了，下面是这两个系统的设计目标：
+
+文件系统：
+IFileReader,IFileWriter接口设计
+支持zip,文件夹和自定义资源包访问
+能很好的处理同名文件，支持相对路径,支持优先级（可覆盖同名资源，这样可以做一些多平台公用资源包，所谓one build，也可以大面积LOD，比如PC上根据机器性能指定资源包）
+支持缓冲文件bufferd file
+支持从内存读取,支持从网络读取
+
+
+资源管理
+
+资源怎么管理要看怎么使用
+0）搞清楚有哪些种类的资源，有什么特点
+    模型，动画，贴图，材质文件 - 3d/2d模型动画资源
+    关卡，地图层（只是拼接组合的信息，不包括贴图），基于actor的cinematic，脚本， 配置 - 游戏数据资源
+
+1）在合适的时机载入，释放资源，分组管理
+    按内存占用时间的分组：全局资源，仅主菜单使用的资源，关卡游戏内资源（包括in game menu)，比较大的独立模块资源（如从主菜单进入社区功能模块）等。
+
+2）资源共享
+    例如静态和动态物体共享模型数据，动态物体的模型共享动画数据，模型共享材质
+    资源共享的最小粒度是某一类资源的数据，不一定是独立的文件（collada是独立的文件），为了共享资源，所有资源必须有GUID。资源管理器由各类资源的管理器组成，并可以插入未知资源的管理器。
+
+==============================
+一些需求
+
+ArchiveManager
+1)加入archive组管理，将几个archiver(不管类型是否相同），组成一个group,默认按照加入顺序确定优先级。group中可以只有一个archive。优先级可以重新确定（这样可以根据不同的配置设定搜索次序）
+2)提供getFile(filename, ArchiveGroupName, ArchiveName="")函数，从一个archive group中打开一个文件，按group中archiver的优先级匹配文件名。如果ArchiveName不为空且存在，就直接去这个archive里面打开。
+
+ps:getFile只是例子，按情况用其他名字，返回DataStream等。
+ArchiveManager用名字（或UID）管理archive,archive group,创建group时指定名字，getFile里面用这个名字，archive同理（archive可直接是zip,文件夹路径）
+
+
+ResourceManager （我来写吧）
+hold资源，统一管理某类资源的load/unload，unloadAllUnRefed等。
+注：静态资源要共享- get资源，即create or retrieve.没想好是否文件级share或obj级。结合pig的材质系统再看看
+提供接口设定资源使用的archive group(可多个），供load时使用（将某类资源和某些archive group关联，可以提高载入查询速度，当然不同的resourceMgr可以关联到相同的archive group)
+
+资源管理器主要就是getRes(name)
+ 以及unloadAllUnRefedRes
+ 还有cloneRes
+ 对于从文件载入的资源，包括material或texture
+ 按照名字get,如果存在，直接返回一个share ptr
+ 通过share ptr共享，如果material是动态的，所有的getRes都要clone一个
+ 如果是静态material，直接share
+ 无论动态静态的material，都是可以修改的
+ 区别只是修改后影响一个，还是影响一批
+ 纹理也是这样，但纹理基本不会修改，等于静态material
+ 纹理也可以动态，比如载入后修改
+ 使用mask换色那种
+ 几种基础的资源，都有相应的管理器，不但可以共享，还可以任意装配
+ 比如mesh和动画的组合
+ 只要他们是兼容的（或基本兼容）
+ 动画是animator
+ 资源在磁盘上，是一个个文件，比如3d的类似dae,分很多块，dae里面有使用到的材质，材质里有纹理，模型数据，动画数据等等，载入后都由各自的管理器存放，model里面都是share ptr持有
+ model载入构造的时候，可以指定各种资源的来源，然后组装起来
+ 比如我们的文件格式叫做.flt,类似dae，这是xml的中间格式，里面有各种资源，每种资源有个名字，带路径的那种，载入后在管理器中这个资源是唯一的，一个.flt文件，可以包含0~n种资源，每种资源0~m个
+2d的，3d的，甚至脚本，只要是资源就可以，统一为.flt
+ 当然.flt里面最上层的那些资源种类都是相对对立的，资源里面包含更小的东西就不共享了
+ 比如一个2d动画，由2d动画数据，材质，贴图够成，动画本身不再拆开了
+
+嗯，明白，资源都是独立唯一的
+ 对
+ 可以共享，需要时clone,管理器会管理卸载
+ 因为是share ptr的，卸载只要把管理器的ptr reset，当然外面必须都是shar ptr，不能保存share ptr的引用
+ 所以可以removeAllUnUsedRes
+ 手工创建的资源，也走管理器，这样可以比较方便的clone
+ OGRE的我研究了，更复杂，他还要支持资源的reload
+ 我们暂时就算了
+ 然后对于material,采用pig计算id的方式，让batch比较
+ 所有可共享的，用管理器管理的资源，继承自BaseObject
+ 每个管理器，使用一个map，根据name映射到一个id,这个id对于这类资源唯一
+ 这个id就是数组索引
+ 和pig的material m_id不同，所以可以改一下m_id的名字
+
+刚才想到，其实资源可以不要id,因为getRes(name)返回的是share ptr，只有load和init的时候才需要getRes
+ 直接遍历数组比较字符串都没问题，或者用个std::find搞定
+ 客户代码拿到ptr存着以后用就可以了
+
+关于NameUID
+代码中引用name方便，内部查找时要避免字符串比较，使用hash，比较hash值。ArchiveManager和各种ResourceManager中都有一或N个hash map(不知道std的hash map是否平台通吃，或找一个开源的实现)
+
+to be continue...

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XKitAnimationFile version="1" fps="30">
+  <Images Num="1">
+    <Image FilePath="..\font.png" ModuleNum="96">
+      <Module left="0" top="0" width="6" height="21" type="0" name="SPACE"/>
+      <Module left="6" top="0" width="11" height="21" type="0" name="!"/>
+      <Module left="17" top="0" width="16" height="21" type="0" name="&quot;"/>
+      <Module left="33" top="0" width="16" height="21" type="0" name="#"/>
+      <Module left="49" top="0" width="16" height="21" type="0" name="$"/>
+      <Module left="65" top="0" width="16" height="21" type="0" name="%"/>
+      <Module left="81" top="0" width="18" height="21" type="0" name="&amp;"/>
+      <Module left="99" top="0" width="10" height="21" type="0" name="'"/>
+      <Module left="109" top="0" width="12" height="21" type="0" name="("/>
+      <Module left="121" top="0" width="12" height="21" type="0" name=")"/>
+      <Module left="133" top="0" width="16" height="21" type="0" name="*"/>
+      <Module left="149" top="0" width="16" height="21" type="0" name="+"/>
+      <Module left="165" top="0" width="10" height="21" type="0" name=","/>
+      <Module left="175" top="0" width="16" height="21" type="0" name="-"/>
+      <Module left="191" top="0" width="10" height="21" type="0" name="."/>
+      <Module left="201" top="0" width="16" height="21" type="0" name="/"/>
+      <Module left="217" top="0" width="16" height="21" type="0" name="0"/>
+      <Module left="233" top="0" width="16" height="21" type="0" name="1"/>
+      <Module left="0" top="21" width="16" height="21" type="0" name="2"/>
+      <Module left="16" top="21" width="16" height="21" type="0" name="3"/>
+      <Module left="32" top="21" width="16" height="21" type="0" name="4"/>
+      <Module left="48" top="21" width="16" height="21" type="0" name="5"/>
+      <Module left="64" top="21" width="16" height="21" type="0" name="6"/>
+      <Module left="80" top="21" width="16" height="21" type="0" name="7"/>
+      <Module left="96" top="21" width="16" height="21" type="0" name="8"/>
+      <Module left="112" top="21" width="16" height="21" type="0" name="9"/>
+      <Module left="128" top="21" width="10" height="21" type="0" name=":"/>
+      <Module left="138" top="21" width="10" height="21" type="0" name=";"/>
+      <Module left="148" top="21" width="16" height="21" type="0" name="&lt;"/>
+      <Module left="164" top="21" width="16" height="21" type="0" name="="/>
+      <Module left="180" top="21" width="16" height="21" type="0" name="&gt;"/>
+      <Module left="196" top="21" width="15" height="21" type="0" name="?"/>
+      <Module left="211" top="21" width="19" height="21" type="0" name="@"/>
+      <Module left="230" top="21" width="19" height="21" type="0" name="A"/>
+      <Module left="0" top="42" width="19" height="21" type="0" name="B"/>
+      <Module left="19" top="42" width="19" height="21" type="0" name="C"/>
+      <Module left="38" top="42" width="19" height="21" type="0" name="D"/>
+      <Module left="57" top="42" width="17" height="21" type="0" name="E"/>
+      <Module left="74" top="42" width="17" height="21" type="0" name="F"/>
+      <Module left="91" top="42" width="19" height="21" type="0" name="G"/>
+      <Module left="110" top="42" width="19" height="21" type="0" name="H"/>
+      <Module left="129" top="42" width="11" height="21" type="0" name="I"/>
+      <Module left="140" top="42" width="17" height="21" type="0" name="J"/>
+      <Module left="157" top="42" width="18" height="21" type="0" name="K"/>
+      <Module left="175" top="42" width="17" height="21" type="0" name="L"/>
+      <Module left="192" top="42" width="21" height="21" type="0" name="M"/>
+      <Module left="213" top="42" width="19" height="21" type="0" name="N"/>
+      <Module left="232" top="42" width="20" height="21" type="0" name="O"/>
+      <Module left="0" top="63" width="18" height="21" type="0" name="P"/>
+      <Module left="18" top="63" width="20" height="21" type="0" name="Q"/>
+      <Module left="38" top="63" width="18" height="21" type="0" name="R"/>
+      <Module left="56" top="63" width="18" height="21" type="0" name="S"/>
+      <Module left="74" top="63" width="18" height="21" type="0" name="T"/>
+      <Module left="92" top="63" width="19" height="21" type="0" name="U"/>
+      <Module left="111" top="63" width="19" height="21" type="0" name="V"/>
+      <Module left="130" top="63" width="21" height="21" type="0" name="W"/>
+      <Module left="151" top="63" width="18" height="21" type="0" name="X"/>
+      <Module left="169" top="63" width="18" height="21" type="0" name="Y"/>
+      <Module left="187" top="63" width="17" height="21" type="0" name="Z"/>
+      <Module left="204" top="63" width="13" height="21" type="0" name="["/>
+      <Module left="217" top="63" width="16" height="21" type="0" name="\"/>
+      <Module left="233" top="63" width="13" height="21" type="0" name="]"/>
+      <Module left="0" top="84" width="14" height="21" type="0" name="^"/>
+      <Module left="14" top="84" width="12" height="21" type="0" name="_"/>
+      <Module left="26" top="84" width="14" height="21" type="0" name="`"/>
+      <Module left="40" top="84" width="16" height="21" type="0" name="a"/>
+      <Module left="56" top="84" width="16" height="21" type="0" name="b"/>
+      <Module left="72" top="84" width="16" height="21" type="0" name="c"/>
+      <Module left="88" top="84" width="16" height="21" type="0" name="d"/>
+      <Module left="104" top="84" width="16" height="21" type="0" name="e"/>
+      <Module left="120" top="84" width="12" height="21" type="0" name="f"/>
+      <Module left="132" top="84" width="15" height="21" type="0" name="g"/>
+      <Module left="147" top="84" width="16" height="21" type="0" name="h"/>
+      <Module left="163" top="84" width="10" height="21" type="0" name="i"/>
+      <Module left="173" top="84" width="11" height="21" type="0" name="j"/>
+      <Module left="184" top="84" width="15" height="21" type="0" name="k"/>
+      <Module left="199" top="84" width="10" height="21" type="0" name="l"/>
+      <Module left="209" top="84" width="21" height="21" type="0" name="m"/>
+      <Module left="230" top="84" width="16" height="21" type="0" name="n"/>
+      <Module left="0" top="105" width="16" height="21" type="0" name="o"/>
+      <Module left="16" top="105" width="16" height="21" type="0" name="p"/>
+      <Module left="32" top="105" width="16" height="21" type="0" name="q"/>
+      <Module left="48" top="105" width="13" height="21" type="0" name="r"/>
+      <Module left="61" top="105" width="15" height="21" type="0" name="s"/>
+      <Module left="76" top="105" width="13" height="21" type="0" name="t"/>
+      <Module left="89" top="105" width="16" height="21" type="0" name="u"/>
+      <Module left="105" top="105" width="16" height="21" type="0" name="v"/>
+      <Module left="121" top="105" width="19" height="21" type="0" name="w"/>
+      <Module left="140" top="105" width="15" height="21" type="0" name="x"/>
+      <Module left="155" top="105" width="16" height="21" type="0" name="y"/>
+      <Module left="171" top="105" width="15" height="21" type="0" name="z"/>
+      <Module left="186" top="105" width="11" height="21" type="0" name="{"/>
+      <Module left="197" top="105" width="11" height="21" type="0" name="|"/>
+      <Module left="208" top="105" width="11" height="21" type="0" name="}"/>
+      <Module left="219" top="105" width="14" height="21" type="0" name="~"/>
+      <Module left="233" top="105" width="16" height="21" type="0" name="unknow"/>
+    </Image>
+  </Images>
+  <Frames Num="0"/>
+  <Anims Num="0"/>
+</XKitAnimationFile>

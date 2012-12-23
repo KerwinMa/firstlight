@@ -1,0 +1,37 @@
+FLT TODO LIST
+
+
+事件系统，windows平台输入支持（输入用事件封装）Done
+
+renderer接口，transform管理，实现GLES renderer
+Camera类
+renderer接口，drawPrimitive，实现GLES renderer
+完善render states,完成blend state - Done
+
+增加texture state,支持multi-texture -Done
+GLES实现material apply -Done
+实现完整的effect/materila->technique->Pass流程 -Done
+增加文件系统支持/资源管理器 -Done
+外部载入材质脚本 -Done (渲染状态和纹理参数部分添加，以后逐步添加完）
+Image接口，TGA,png,格式载入保存支持 -Done （保存还没写）
+设计texture接口，texture manager,实现GLES texture -Done
+设计模型格式，支持静态模型，用renderer绘制出来
+设计动画系统
+设计模型动画文件格式（可能直接使用已有的）
+实现动画系统（底层）
+分别实现uv动画，skin mesh, morph动画和基于node的动画
+设计Scene graph(初步考虑用ORGE的)
+Scene Update流程
+VBO支持
+动态batch
+
+====================================
+
+FLT Milestore 2 :
+1) 2D绘制renderer接口和opengl es实现
+2) 2d动画系统
+3) 2d draw batch (部分代码3d batch通用）
+4) 简单的3d camera, frustum clip, transform set renderer接口设计和opengl es实现
+5) UI系统
+6）Torch的win32模拟
+7）移植到iphone

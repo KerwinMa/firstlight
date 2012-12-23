@@ -1,0 +1,115 @@
+{	
+	"tracks" :
+	[
+		{
+			"type" : "pos",
+			"target" : "body",
+			"keys" :
+			[
+				{
+					"time" : 0,
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				{
+					"time" : 1000,
+					"x": -100,
+					"y": 100,
+					"z": 0
+				},
+				{
+					"time" : 2000,
+					"x": 100,
+					"y": 0,
+					"z": 0
+				},
+				{
+					"time" : 3000,
+					"x": 0,
+					"y": 0,
+					"z": 0
+				}
+			]
+		},
+		{
+			"type" : "rot",
+			"target" : "body",
+			"keys" :
+			[
+				{
+					"time" : 0,
+					"degree": 0
+				},
+				{
+					"time" : 500,
+					"degree": 45
+				},
+				{
+					"time" : 2000,
+					"degree": -45
+				},
+				{
+					"time" : 5500,
+					"degree": 0
+				}
+			]
+		},
+		{
+			"type" : "rot",
+			"target" : "lupperarm",
+			"keys" :
+			[
+				{
+					"time" : 0,
+					"degree": 180
+				},
+				{
+					"time" : 200,
+					"degree": 90
+				},
+				{
+					"time" : 600,
+					"degree": 180
+				},
+				{
+					"time" : 800,
+					"degree": 90
+				},
+				{
+					"time" : 2000,
+					"degree": 180
+				}
+			]
+		},
+		
+		{
+			"type" : "rot",
+			"target" : "lforearm",
+			"keys" :
+			[
+				{
+					"time" : 0,
+					"degree": 45
+				},
+				{
+					"time" : 500,
+					"degree": 0
+				},
+				{
+					"time" : 800,
+					"degree": -45
+				},
+				{
+					"time" : 1200,
+					"degree": 90
+				},
+				{
+					"time" : 3200,
+					"degree": 00
+				}
+			]
+		}
+		
+	]
+}

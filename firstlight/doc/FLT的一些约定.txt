@@ -1,0 +1,5 @@
+1 使用右手坐标系
+2 Image里面的图像数据是正的，也就是图像原点在屏幕左上角
+3 设定UV坐标的时候按照屏幕坐标系（因为对于OpenGL所有的地方都是使用笛卡尔坐标-正y朝上，但是Image数据upload给OpenGL Texture的时候是屏幕坐标系，所以设定uv坐标的时候要倒一下，也就是按屏幕坐标系）
+4 IRenderer::createImageFromFile(const char* filePath)/createTexture(const char* filePath)接口，只能用于直接访问OS文件系统；游戏中请使用FileStream接口
+

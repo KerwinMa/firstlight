@@ -1,0 +1,20 @@
+------------ FirstLight Engine Log File ---------------
+[engine][0]Logger created.
+[engine][0]EventManager created.
+[engine][0]ArchiveManager created.
+[engine][0]TextureManager created.
+[engine][0]MaterialManager created.
+[engine][0]MaterialFactory created.
+[engine][0]XSpriteManager created.
+[engine][0]XFontManager created.
+[engine][0]AnimSetManager created.
+[engine][0]UIManager created.
+[engine][0]Sound System inited.
+[engine][0]TGAImageLoader created.
+[engine][0]OpenGL ES-CM 1.1 -Imagination Technologies (Host GL: `ATI Technologies Inc.`)-Imagination Technologies (Host GL: `ATI Technologies Inc.`)
+[engine][0]OpenGLES1 renderer created.
+[engine][0]Win32Device created.
+[engine][0]screen=320X480, bits=32, useExternalWindow=0
+[engine][0]Load Archive ./res .
+[engine][0]Open File font_dbg.xsp, in Archive:  .
+[engine][0]Open File font_dbg.tga, in Archive:  .

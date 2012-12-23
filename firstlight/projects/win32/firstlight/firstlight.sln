@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "firstlight", "firstlight.vcproj", "{3E9C278F-03F4-4A5E-A0F1-43ECB4C31282}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E9C278F-03F4-4A5E-A0F1-43ECB4C31282}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3E9C278F-03F4-4A5E-A0F1-43ECB4C31282}.Debug|Win32.Build.0 = Debug|Win32
+		{3E9C278F-03F4-4A5E-A0F1-43ECB4C31282}.Release|Win32.ActiveCfg = Release|Win32
+		{3E9C278F-03F4-4A5E-A0F1-43ECB4C31282}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

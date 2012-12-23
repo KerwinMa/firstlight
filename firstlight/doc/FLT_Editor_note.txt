@@ -1,0 +1,2 @@
+添加个系统环境变量 wxWidget = %wx路径%（C:\Developer\sdk\wxMSW-2.8.11），我用的2.8.11，你试试行不行
+另外我把我编译的exe也上传了，win7

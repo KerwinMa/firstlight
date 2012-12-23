@@ -1,0 +1,16 @@
+This is a demo game project using FLT.
+
+The folder tree:
+
+--demo
+     --doc		//design doc, plans, and more
+     --ref		//reference res and articles
+     --build		//place cooked res and win32 exe
+          --res          
+     --data		//original res and game data, including data cook scripts
+     --src		//souce files of demo
+     --externs          //external libs. some are external links
+     --prj		//project files
+          --win32	
+          --ios
+     --tools		//tools and scripts used, some common tools are exteranl links

@@ -1,0 +1,3 @@
+This is a win32 opengl es 1.0 implementation made by Hybrid Graphics Ltd.
+
+FirstLight doesn't use it now, just put it here for a copy, for it is hard to find on www.

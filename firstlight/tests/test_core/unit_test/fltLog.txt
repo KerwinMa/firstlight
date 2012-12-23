@@ -1,0 +1,3 @@
+------------ FirstLight Engine Log File ---------------
+-------------------------
+Log File closed normally.

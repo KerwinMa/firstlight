@@ -1,0 +1,107 @@
+一些关于引擎设计,Scene Management的文章 收藏
+ http://www.realityprime.com/articles/scenegraphs-past-present-and-future
+
+
+
+
+
+http://home.comcast.net/~tom_forsyth/blog.wiki.html#[[Scene%20Graphs%20-%20just%20say%20no]]
+
+
+
+
+
+
+
+
+   这几天逛GameDev，几乎把所有和Scene Management相关的文章和帖子都翻遍了，看到各种牛人的讨论，受益匪浅啊，对研究引擎设计非常有用，把部分特别有意思的帖子列出来，希望对你也有帮助:)  (以下顺序不分前后)
+
+(update on 4.23.09)
+
+The Technology of a 3D Engine  part 1, part 2, part 3
+
+
+
+Scene Graph Resources
+http://www.gamedev.net/community/forums/topic.asp?topic_id=349829
+
+Terrain and Scene Graphs（关于scene graph的经典讨论，包括下面2个，一定要看，Yann L的回帖都是精华！！！）
+http://www.gamedev.net/community/forums/topic.asp?topic_id=110342
+
+Combining Octrees and BSP trees... is it possible? 
+http://www.gamedev.net/community/forums/topic.asp?topic_id=123169
+
+ ABTs, relaxing them and other questions
+http://www.gamedev.net/community/forums/topic.asp?topic_id=330265&whichpage=1&#2146040
+
+Anti-SceneGraphism: A Tale of Tom Forsyth's "Scene Graphs Just Say No" (这个帖子可是牛人多多，包括大名鼎鼎的 Tom Forsyth，Dave Eberly，AndyTX，还有众多斑竹）
+http://www.gamedev.net/community/forums/topic.asp?topic_id=464464&PageSize=25&WhichPage=1
+
+ multi-view scenegraph, kd-tree, ABT, BVH, static vs dynamic objects
+http://www.gamedev.net/community/forums/topic.asp?topic_id=483793
+
+ General Question on Scenegraphs 
+http://www.gamedev.net/community/forums/topic.asp?topic_id=350528
+
+Bounding Volumes / Scenegraph
+http://www.gamedev.net/community/forums/topic.asp?topic_id=264529
+
+ Dynamic objects in scene graphs
+http://www.gamedev.net/community/forums/topic.asp?topic_id=310246
+
+ Occlusion Culling
+http://www.gamedev.net/community/forums/topic.asp?topic_id=153497
+
+Scene Graphs and Octrees
+http://www.gamedev.net/community/forums/topic.asp?topic_id=454593
+
+ Quadtrees + Collision Detection
+http://www.gamedev.net/community/forums/topic.asp?topic_id=434610
+
+Octree + Portal engine question
+http://www.gamedev.net/community/forums/topic.asp?topic_id=450982
+
+ Octrees and Scenegraphs... how do they work together?
+http://www.gamedev.net/community/forums/topic.asp?topic_id=464305
+
+ octrees vs kd-trees
+http://www.gamedev.net/community/forums/topic.asp?topic_id=289728&PageSize=25&WhichPage=1
+
+To BSP or not to BSP...
+http://www.gamedev.net/community/forums/topic.asp?topic_id=310021
+
+"Next Gen" game engine design
+http://www.gamedev.net/community/forums/topic.asp?topic_id=425353&PageSize=25&WhichPage=2
+
+a very basic kd-tree tutorial?
+http://www.gamedev.net/community/forums/topic.asp?topic_id=504800
+
+ Understanding and Implementing Scene Graphs
+http://www.gamedev.net/community/forums/topic.asp?key=featart&uid=2028&forum_id=35&Topic_Title=Understanding+and+Implementing+Scene+Graphs
+
+ Dynamic objects in scene graphs
+http://www.gamedev.net/community/forums/topic.asp?topic_id=310246
+
+Engine design questions
+http://www.gamedev.net/community/forums/topic.asp?topic_id=515082&whichpage=1&#3351070
+
+ Object-Oriented Scene Management
+http://www.gamedev.net/community/forums/topic.asp?key=featart&uid=1812&forum_id=35&topic_title=object-oriented+scene+management&PageSize=25&WhichPage=1
+
+ Scenegraph Management: A discussion
+http://www.gamedev.net/community/forums/topic.asp?topic_id=181233
+
+ Dynamic 3D Scene Graphs
+http://www.gamedev.net/community/forums/topic.asp?topic_id=517420
+
+ Need some help with scenegraph/octree concept
+http://www.gamedev.net/community/forums/topic.asp?topic_id=128965
+
+ Scene Graph. DAG or Tree With Mesh List?
+http://www.gamedev.net/community/forums/topic.asp?topic_id=345631
+
+ Scene graphs and spartial partitioning
+http://www.gamedev.net/community/forums/topic.asp?topic_id=204534
+
+ Your scene graph design
+http://www.gamedev.net/community/forums/topic.asp?topic_id=254917
