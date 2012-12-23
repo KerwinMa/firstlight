@@ -11,3 +11,20 @@
 *.lai
 *.la
 *.a
+
+# vc temp files
+*.ncb
+*.suo
+*.pdb
+*.ilk
+*.dep
+*.idb
+
+# vc outputs
+firstlight/projects/win32/firstlight/Debug/*.*
+firstlight/projects/win32/firstlight/Release/*.*
+firstlight/tests/test_core/flt_test/Debug/*.*
+firstlight/tests/test_core/flt_test/Release/*.*
+firstlight/tests/test_core/unit_test/Debug/*.*
+firstlight/tests/test_core/unit_test/Release/*.*
+fltDemo/prj/win32/fltDemo/Debug/*.*
